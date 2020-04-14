@@ -1,0 +1,66 @@
+.we-have {
+  grid-area: we-have;
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 1rem;
+  &:before {
+    @include home-text-above-box("We have");
+  }
+  @include tablet {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+  }
+  .fa-book {
+    color: $primary-purple;
+  }
+  .fa-users {
+    color: rgb(113, 140, 235);
+  }
+  .fa-money-bill-wave-alt {
+    color: rgb(107, 181, 107);
+    margin-left: 0.4rem;
+  }
+  .fa-building {
+    color: #f8c27a;
+  }
+
+  & > div {
+    @include home-grid-box();
+    @include flexbox();
+    @include flex-direction(column);
+    padding: 0.6rem 1.2rem;
+    min-width: 150px;
+    border-radius: 4px;
+    @include phone-small-portrait {
+      min-width: 135px;
+    }
+    span {
+      font-size: 1.4rem;
+      font-weight: bold;
+      color: $black-text;
+      @include laptop {
+        font-size: 1.2rem;
+      }
+      @include phone-small-portrait {
+        font-size: 1rem;
+      }
+    }
+    .icon-and-text {
+      @include flexbox-all(row, space-between, center);
+      p,
+      i {
+        font-size: 1.4rem;
+        @include laptop {
+          font-size: 1.2rem;
+        }
+        @include phone-small-portrait {
+          font-size: 1rem;
+        }
+      }
+      p {
+        color: $gray-dark;
+      }
+    }
+  }
+}

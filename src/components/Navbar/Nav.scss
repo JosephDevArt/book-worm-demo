@@ -1,0 +1,50 @@
+.main-nav {
+  grid-area: nav;
+  position: sticky;
+  height: 100vh;
+  top: 0;
+  box-shadow: inset -1px 0px 3px rgb(108, 108, 108);
+  z-index: 4;
+  background: linear-gradient(to top right, #e000fe, #9630fd);
+  transition: all 0.5s ease-in-out;
+  .logo {
+    display: block;
+    width: 85%;
+    margin: 1.8rem;
+  }
+  ul {
+    border-top: 10px solid #f4f4f4;
+    border-bottom: 10px solid #f4f4f4;
+    padding: 2rem 0;
+  }
+  @include phone-medium-landscape {
+    box-shadow: unset;
+    position: fixed;
+    right: 750px;
+    width: 100%;
+    height: calc(
+      100% - 85px + 2rem
+    ); //100% - distance from the top(85px) + padding bottom(2rem)
+    top: 85px;
+    overflow: auto;
+    .logo {
+      width: 50%;
+      margin: 1.8rem auto;
+    }
+  }
+  @include phone-small-landscape {
+    right: 600px;
+  }
+  @include phone-medium-portrait {
+    right: 450px;
+  }
+  @include phone-small-portrait {
+    right: 350px;
+  }
+
+  @import "./NavLink/LinkComp.scss";
+}
+
+.nav-slide-right {
+  right: 0px;
+}

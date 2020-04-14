@@ -1,0 +1,48 @@
+.book-worm {
+  @include home-grid-box();
+  @include flexbox-all(column, center, center);
+  grid-area: book-worm;
+  padding: 2rem;
+  border-radius: $home-box-border-radius;
+  text-align: center;
+  &:before {
+    @include home-text-above-box("Welcome");
+  }
+  @include phone-small-portrait {
+    padding: 2rem 1rem;
+  }
+  h1 {
+    font-size: 2rem;
+    color: $black-text;
+    white-space: nowrap;
+    @include laptop {
+      font-size: 1.6rem;
+    }
+    @include phone-medium-portrait {
+      font-size: 1.4rem;
+    }
+    @include phone-iphoneX {
+      font-size: 1.2rem;
+    }
+  }
+  blockquote {
+    font-size: 1.3rem;
+    color: $gray-dark;
+    margin-top: 1.2rem;
+    line-height: 1.6;
+    @include laptop {
+      font-size: 1.1rem;
+      margin-top: 0.6rem;
+    }
+    @include phone-medium-portrait {
+      font-size: 1rem;
+      line-height: 1.9;
+    }
+    @include phone-iphoneX {
+      line-height: 1.6;
+    }
+    span {
+      white-space: nowrap;
+    }
+  }
+}

@@ -1,0 +1,35 @@
+.pagination {
+  margin-bottom: 1rem;
+  @include tablet {
+    margin-bottom: 2rem;
+  }
+  ul {
+    @include flexbox-all(row, center, center);
+    .prevBtn,
+    .nextBtn,
+    .numBtn {
+      cursor: pointer;
+      background: none;
+      color: $black-text;
+      padding: 0.4rem 1.6rem;
+      @include phone-medium-portrait {
+        padding: 0.4rem 1rem;
+      }
+      @include phone-small-portrait {
+        padding: 0.4rem 0.8rem;
+      }
+    }
+    .prevBtn,
+    .nextBtn {
+      border: 1px solid $border-gray-light;
+      border-radius: 4px;
+    }
+    .numBtn {
+      border: none;
+    }
+    .active {
+      color: $primary-purple;
+      font-weight: bold;
+    }
+  }
+}

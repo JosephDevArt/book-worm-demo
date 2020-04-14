@@ -1,0 +1,53 @@
+.book {
+  background-color: rgb(230, 230, 230); //before image is loaded
+  width: 100%;
+  height: 340px;
+  position: relative;
+  justify-self: center;
+  max-width: 325px;
+
+  img {
+    width: 100%;
+    height: 100%;
+  }
+  .title-outer {
+    color: $black-text;
+    font-size: 0.9rem;
+    @include phone-medium-portrait {
+      font-size: 0.8rem;
+    }
+  }
+
+  &:hover {
+    img {
+      opacity: 0;
+      visibility: hidden;
+    }
+    .title-outer {
+      display: none;
+    }
+    .book-info-inner {
+      @include flexbox();
+      width: 115%;
+      height: 115%;
+      transform: translate(-6.5%, -5%);
+      background-color: $gray-dark;
+
+      @include tablet {
+        width: 110%;
+        height: 110%;
+        transform: translate(-5%, -5%);
+      }
+      @include phone-medium-landscape {
+        width: 100%;
+        height: 100%;
+        transform: translate(0, 0);
+      }
+      .btn-add,
+      .btn-remove,
+      .btn-preview {
+        visibility: visible;
+      }
+    }
+  }
+}

@@ -1,0 +1,88 @@
+.user {
+  @include flexbox();
+  @include align-items(center);
+  padding: 1.6rem 1.2rem;
+  border-bottom: 1px solid $border-gray-light;
+  &:last-child {
+    border: none;
+  }
+  @include phone-small-portrait {
+    padding: 1.2rem 0.8rem;
+  }
+  img {
+    width: 60px;
+    border-radius: 50%;
+    margin-right: 0.8rem;
+  }
+  .user-info {
+    @include flexbox();
+    @include flex-direction(column);
+    span {
+      font-size: 0.9rem;
+      color: $gray-light;
+    }
+    @include tablet {
+      h3 {
+        font-size: 1rem;
+        color: $black-text;
+      }
+      p {
+        font-size: 0.9rem;
+        color: $gray-dark;
+      }
+      span {
+        font-size: 0.8rem;
+      }
+      padding-right: 1rem;
+    }
+    @include phone-small-portrait {
+      h3 {
+        font-size: 0.9rem;
+      }
+      p {
+        font-size: 0.8rem;
+      }
+      span {
+        font-size: 0.7rem;
+      }
+    }
+  }
+}
+
+//----FOLLOW/UNFOLLOW BUTTONS----
+
+.btn {
+  padding: 0.4rem 1.2rem;
+  text-align: center;
+  width: 25%;
+  margin-left: auto;
+  position: relative;
+  border-radius: 20px;
+  background-color: white;
+  border: 1px solid;
+  transition: 0.2s ease-in-out;
+  text-align: center;
+  cursor: pointer;
+  &:focus {
+    outline: none;
+  }
+  @include phone-small-landscape {
+    width: 30%;
+    font-size: 0.7rem;
+  }
+}
+
+.btn-follow {
+  color: $black-text;
+  border-color: $border-gray-light;
+  &:focus {
+    box-shadow: 0 0 0 1px $border-gray-light;
+  }
+}
+.btn-unfollow {
+  color: rgb(255, 80, 80);
+  border-color: rgb(255, 80, 80);
+  &:focus {
+    box-shadow: 0 0 0 1px rgb(255, 80, 80);
+  }
+}

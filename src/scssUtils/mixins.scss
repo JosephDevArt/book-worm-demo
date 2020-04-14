@@ -1,0 +1,75 @@
+@mixin flexbox() {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: -moz-box;
+  display: flex;
+}
+
+@mixin flex-direction($direction) {
+  -webkit-flex-direction: $direction;
+  -moz-flex-direction: $direction;
+  -ms-flex-direction: $direction;
+  flex-direction: $direction;
+}
+
+@mixin align-items($align) {
+  -webkit-align-items: $align;
+  -webkit-box-align: $align;
+  -webkit-box-orient: vertical;
+  -moz-align-items: $align;
+  -ms-align-items: $align;
+  -ms-flex-align: $align;
+  align-items: $align;
+}
+
+@mixin justify-content($justify) {
+  -webkit-justify-content: $justify;
+  -moz-justify-content: $justify;
+  -ms-justify-content: $justify;
+  -ms-flex-pack: $justify;
+  justify-content: $justify;
+}
+@mixin flexbox-all($direction, $justify, $align) {
+  @include flexbox();
+  @include flex-direction($direction);
+  @include justify-content($justify);
+  @include align-items($align);
+}
+
+@mixin section-inside-main() {
+  width: 100%;
+  height: 100%;
+  padding: 3rem 2rem;
+  position: relative;
+  @include phone-small-landscape {
+    padding: 2.5rem 1rem 1rem;
+  }
+}
+
+@mixin home-grid-box() {
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0 3px 10px 2px rgb(223, 223, 223);
+  position: relative;
+}
+@mixin home-text-above-box($content) {
+  content: $content;
+  position: absolute;
+  font-weight: bold;
+  top: -1.8rem;
+  color: $black-text;
+  left: 0;
+  @include phone-small-portrait {
+    font-size: 0.9rem;
+    top: -1.6rem;
+  }
+}
+
+@mixin prevent-text-select() {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none;
+}

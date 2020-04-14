@@ -1,0 +1,19 @@
+header {
+  @include flexbox-all(row, flex-end, center);
+  grid-area: header;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0 1px 3px #dddddd;
+  padding: 0 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  @include phone-medium-landscape {
+    @include justify-content(flex-start);
+    padding: 0 2.3rem;
+    z-index: 5;
+  }
+  @include phone-small-landscape {
+    padding: 0 1rem;
+  }
+  @import "./UserInfo/UserInfo.scss";
+}

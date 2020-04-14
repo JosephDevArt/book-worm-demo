@@ -1,0 +1,57 @@
+/* =========== RESETS ========= */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  font-family: "Montserrat", sans-serif, serif;
+}
+a {
+  text-decoration: none;
+}
+li {
+  list-style: none;
+}
+/* =========== RESETS ========= */
+body {
+  background-color: #f4f4f4;
+  max-width: 1920px;
+  margin: 0 auto;
+  &::-webkit-scrollbar {
+    width: 15px;
+    background-color: #ffffff;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background: #a9a9a9;
+  }
+  @include desktop-large {
+    border-right: 1px solid $border-gray-light;
+  }
+}
+
+.App {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  grid-template-rows: 65px 1fr;
+  grid-template-areas:
+    "nav header"
+    "nav main";
+  @include tablet {
+    grid-template-columns: 250px 1fr;
+  }
+  @include phone-medium-landscape {
+    grid-template-columns: 1fr;
+    grid-template-rows: 85px 1fr;
+    grid-template-areas:
+      "header"
+      "main";
+  }
+}
